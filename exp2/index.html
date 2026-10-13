@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2 | DES 157A</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <header>
+            <h1>Experiment 2</h1>
+            <h2>DES 157A - Interactive Media II</h2>
+        </header>
+
+        <main>
+            <section>
+                <p class="number">02 / JAVASCRIPT</p>
+
+                <h2>Color Mood Generator</h2>
+
+                <p id="description">
+                    Choose a color and see how it changes the mood
+                    of this webpage.
+                </p>
+
+                <div id="result">
+                    <h3 id="colorTitle">Your Color Mood</h3>
+                    <p id="colorMessage">
+                        Your result will appear here.
+                    </p>
+                </div>
+
+                <button id="tryAgain">Choose Another Color</button>
+            </section>
+        </main>
+
+        <footer>
+            <a href="../Portal/">← Back to Portal</a>
+            <p>Sarvagya Bhardwaj • Fall 2026</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // This program asks the user to choose a color.
+        // It uses functions, an array, selection, and a loop
+        // to change the background and display a color mood.
+
+
+        var colors = ["red", "blue", "green", "yellow"];
+
+        // this asks the user to choose a color.
+        function getColor() {
+            var userColor = prompt(
+                "Choose a color: red, blue, green, or yellow"
+            );
+
+            if (userColor === null) {
+                return "";
+            }
+
+            return userColor.toLowerCase().trim();
+        }
+
+        // this wouldcheck the color and return a message.
+        function checkColor(color) {
+
+            var message = "";
+            for (var i = 0; i < colors.length; i++) {
+
+                if (color === colors[i]) {
+
+                    // this would Choose a message based on the color.
+                    if (color === "red") {
+                        message = "Red represents energy, passion, and excitement.";
+                    }
+                    else if (color === "blue") {
+                        message = "Blue represents calmness, peace, and creativity.";
+                    }
+                    else if (color === "green") {
+                        message = "Green represents nature, growth, and balance.";
+                    }
+                    else if (color === "yellow") {
+                        message = "Yellow represents happiness, warmth, and optimism.";
+                    }
+
+                    return message;
+                }
+            }
+
+            return "That color is not available. Please try again.";
+        }
+
+
+        function displayColor() {
+
+            var chosenColor = getColor();
+
+            var resultMessage = checkColor(chosenColor);
+
+            var title = document.getElementById("colorTitle");
+            var message = document.getElementById("colorMessage");
+
+            if (chosenColor === "red" ||
+                chosenColor === "blue" ||
+                chosenColor === "green" ||
+                chosenColor === "yellow") {
+
+                document.body.style.backgroundColor = chosenColor;
+
+                title.innerHTML = "You Chose " + chosenColor.toUpperCase() + "!";
+                message.innerHTML = resultMessage;
+            }
+            else {
+                document.body.style.backgroundColor = "#081426";
+
+                title.innerHTML = "Try Again";
+                message.innerHTML = resultMessage;
+            }
+        }
+
+
+        displayColor();
+// lets them choose another color
+
+        document.getElementById("tryAgain").onclick = displayColor;
+
+    </script>
+
+</body>
+
+</html>
