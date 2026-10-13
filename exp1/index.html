@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1 | DES 157A</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <header>
+            <h1>Experiment 1</h1>
+            <h2>DES 157A - Interactive Media II</h2>
+        </header>
+
+        <main>
+            <section>
+                <p class="number">01 / JAVASCRIPT</p>
+
+                <h2>FizzBuzz Experiment</h2>
+
+                <p>
+                    This experiment uses JavaScript to print numbers
+                    from 1 to 100, replacing certain numbers with
+                    Fizz or Buzz.
+                </p>
+
+                <div class="console-message">
+                    <span class="indicator"></span>
+                    <p>Open your browser console to see the results.</p>
+                </div>
+
+                <p class="instructions">
+                    Right-click anywhere on the page, select
+                    Inspect, and open the Console tab.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <a href="../Portal/">← Back to Portal</a>
+            <p>Sarvagya Bhardwaj • Fall 2026</p>
+        </footer>
+
+    </div>
+
+    <script>
+       // This program prints numbers from 1 to 100\
+// If the number is divisible by 3 then print Fizz\
+// If the number is divisible by 5 but not 3 then print Buzz
+// Define start and end number
+        const start = 1;
+        const end = 100;
+
+        // basically Count through the numbers from 1 to 100.
+        for (let i = start; i <= end; i++) {
+
+            // Checking if the number is divisible by 3 or 5.
+            if (i % 3 === 0) {
+                console.log("Fizz");
+            }
+            else if (i % 5 === 0) {
+                console.log("Buzz");
+            }
+            else {
+                console.log(i);
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

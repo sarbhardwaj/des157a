@@ -1,0 +1,149 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #081426;
+    color: #f4f5f7;
+    font-family: "Roboto", sans-serif;
+}
+
+#container {
+    width: 90%;
+    max-width: 1100px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 40px 0 25px;
+    border-bottom: 1px solid #173b5e;
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+header h2 {
+    margin: 8px 0 0;
+    color: #4cc9ff;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+section {
+    width: 100%;
+    max-width: 650px;
+    padding: 45px;
+    background-color: #10243b;
+    border: 1px solid #1b3b59;
+    border-radius: 12px;
+}
+
+.number {
+    margin: 0 0 15px;
+    color: #4cc9ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+section h2 {
+    margin: 0 0 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 36px;
+}
+
+section > p {
+    line-height: 1.7;
+}
+
+.console-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #081426;
+    border: 1px solid #173b5e;
+    border-radius: 8px;
+}
+
+.console-message p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    background-color: #4cc9ff;
+    border-radius: 50%;
+}
+
+.instructions {
+    margin-top: 20px;
+    color: #a9b8ca;
+    font-size: 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0 30px;
+    border-top: 1px solid #173b5e;
+}
+
+footer a {
+    color: #4cc9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f4f5f7;
+}
+
+footer p {
+    margin: 0;
+    color: #a9b8ca;
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 28px 22px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
