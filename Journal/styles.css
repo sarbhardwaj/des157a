@@ -134,3 +134,7 @@ footer {
         font-size: 1.6rem;
     }
 }
+
+article {
+    margin-bottom: 40px;
+}
