@@ -7,6 +7,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mad Libs | A Day at UC Davis Gone Wrong</title>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mad Libs | A Day at UC Davis Gone Wrong</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;family=Roboto+Condensed:wght@400;600;700&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <header>
+            <h1>MAD LIBS</h1>
+            <p>DES 157A - Interactive Media II</p>
+        </header>
+
+        <main>
+
+            <section id="intro">
+                <h2>A Day at UC Davis Gone Wrong</h2>
+                <p>
+                    Ever wondered what happens when an ordinary
+                    day at UC Davis turns into complete chaos?
+                    Fill in the blanks below to create your
+                    own ridiculous campus adventure!
+                </p>
+            </section>
+
+            <section id="game">
+
+                <h2>Fill in the Blanks</h2>
+                <p>Enter a word for each category below.</p>
+
+                <img src="./images/MadLibsTheGameLogo.png"
+                    alt="Custom Mad Libs game illustration"
+                    width="240" height="160">
+
+                <form id="madlib-form">
+
+                    <section class="form-grid">
+
+                        <div>
+                            <label for="adj1">Adjective</label>
+                            <input type="text" id="adj1" required
+                                placeholder="e.g. beautiful">
+                        </div>
+
+                        <div>
+                            <label for="noun1">Noun</label>
+                            <input type="text" id="noun1" required
+                                placeholder="e.g. potato">
+                        </div>
+
+                        <div>
+                            <label for="noun2">Noun</label>
+                            <input type="text" id="noun2" required
+                                placeholder="e.g. bicycle">
+                        </div>
+
+                        <div>
+                            <label for="number">Number</label>
+                            <input type="number" id="number" required
+                                placeholder="e.g. 25">
+                        </div>
+
+                        <div>
+                            <label for="animal1">Animal</label>
+                            <input type="text" id="animal1" required
+                                placeholder="e.g. cow">
+                        </div>
+
+                        <div>
+                            <label for="noun3">Noun</label>
+                            <input type="text" id="noun3" required
+                                placeholder="e.g. pizza">
+                        </div>
+
+                        <div>
+                            <label for="verb">Verb Ending in -ing</label>
+                            <input type="text" id="verb" required
+                                placeholder="e.g. dancing">
+                        </div>
+
+                        <div>
+                            <label for="noun4">Noun</label>
+                            <input type="text" id="noun4" required
+                                placeholder="e.g. library">
+                        </div>
+
+                        <div>
+                            <label for="plural1">Plural Noun</label>
+                            <input type="text" id="plural1" required
+                                placeholder="e.g. ducks">
+                        </div>
+
+                        <div>
+                            <label for="plural2">Plural Noun</label>
+                            <input type="text" id="plural2" required
+                                placeholder="e.g. students">
+                        </div>
+
+                        <div>
+                            <label for="food">Food</label>
+                            <input type="text" id="food" required
+                                placeholder="e.g. burrito">
+                        </div>
+
+                        <div>
+                            <label for="object">Object</label>
+                            <input type="text" id="object" required
+                                placeholder="e.g. umbrella">
+                        </div>
+
+                        <div>
+                            <label for="adj2">Adjective</label>
+                            <input type="text" id="adj2" required
+                                placeholder="e.g. chaotic">
+                        </div>
+
+                        <div>
+                            <label for="animal2">Animal</label>
+                            <input type="text" id="animal2" required
+                                placeholder="e.g. horse">
+                        </div>
+
+                        <div>
+                            <label for="noun5">Noun</label>
+                            <input type="text" id="noun5" required
+                                placeholder="e.g. music">
+                        </div>
+
+                        <div>
+                            <label for="phrase">Funny Phrase</label>
+                            <input type="text" id="phrase" required
+                                placeholder="e.g. Run away!">
+                        </div>
+
+                        <div>
+                            <label for="noun6">Noun</label>
+                            <input type="text" id="noun6" required
+                                placeholder="e.g. ramen">
+                        </div>
+
+                    </section>
+
+                    <input type="submit" value="CREATE MY STORY">
+
+                </form>
+
+            </section>
+
+
+            <section id="result" class="hidden">
+
+                <h2>Your UC Davis Adventure</h2>
+
+                <article>
+                    <h3>A Day at UC Davis Gone Wrong</h3>
+
+                    <p>
+                        It was a <strong>beautiful</strong> day at
+                        UC Davis. My alarm clock was replaced by a
+                        <strong>potato</strong>. I scrambled to get
+                        my backpack and hopped on my
+                        <strong>bicycle</strong> to class.
+                    </p>
+
+                    <p>
+                        I showed up <strong>25</strong> minutes
+                        late to class. I walked into the classroom
+                        and found that my professor was replaced
+                        by a <strong>cow</strong>. No one seemed
+                        to care so I took a seat and continued
+                        acting as if nothing had happened.
+                    </p>
+
+                    <p>
+                        My professor then leaped onto the desk
+                        and exclaimed, "<strong>pizza</strong>!"
+                        All the students in the classroom began
+                        <strong>dancing</strong>. I decided to
+                        exit the classroom.
+                    </p>
+
+                    <p>
+                        I ran out into the <strong>library</strong>
+                        but the whole campus was filled with
+                        <strong>ducks</strong>. A
+                        <strong>student</strong> tossed me a
+                        <strong>burrito</strong>. I grabbed an
+                        <strong>umbrella</strong> to protect
+                        myself.
+                    </p>
+
+                    <p>
+                        Things couldn't get any more
+                        <strong>chaotic</strong> until Chancellor
+                        May rode out on a huge
+                        <strong>horse</strong> blasting
+                        <strong>music</strong>.
+                    </p>
+
+                    <p>
+                        Chancellor May then turned towards me
+                        and yelled,
+                        "<strong>Run away!</strong>"
+                    </p>
+
+                    <p>
+                        I then turned around and headed back
+                        to my dorm. I ordered
+                        <strong>ramen</strong>. I had had my
+                        fill of UC Davis for one day.
+                    </p>
+
+                </article>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>
+                Designed by Sarvagya Bhardwaj |
+                DES 157A | Fall 2026
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
