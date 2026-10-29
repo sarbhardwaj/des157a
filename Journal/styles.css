@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     background-color: #081426;
@@ -6,20 +7,14 @@ body {
     line-height: 1.6;
 }
 
-
-
 #container {
     width: 90%;
     max-width: 900px;
     min-height: 100vh;
     margin: auto;
-
     display: flex;
     flex-direction: column;
 }
-
-
-
 
 header {
     padding: 50px 0 30px;
@@ -38,17 +33,17 @@ header p {
     font-size: 1.1rem;
 }
 
-
 main {
     flex: 1;
     padding: 45px 0;
 }
 
 article {
-    max-width: 700px;
-    margin: auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 770px;
+    margin: 0 auto 40px;
     padding: 35px;
-
     background-color: #10213a;
     border-radius: 8px;
 }
@@ -56,7 +51,6 @@ article {
 article h2 {
     margin-top: 0;
     margin-bottom: 5px;
-
     font-family: "Roboto Condensed", sans-serif;
     font-size: 2rem;
 }
@@ -64,9 +58,7 @@ article h2 {
 article h3 {
     margin-top: 30px;
     margin-bottom: 8px;
-
     color: #4cc9ff;
-
     font-family: "Roboto Condensed", sans-serif;
     font-size: 1.3rem;
 }
@@ -74,7 +66,6 @@ article h3 {
 time {
     display: block;
     margin-bottom: 25px;
-
     color: #a9b8ca;
     font-size: 0.9rem;
 }
@@ -85,7 +76,31 @@ article p {
     font-size: 1rem;
 }
 
+figure {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto 25px;
+}
 
+figure img {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+figcaption {
+    margin-top: 8px;
+    color: #a9b8ca;
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+}
 
 a {
     color: #4cc9ff;
@@ -104,13 +119,10 @@ a:hover {
 
 footer {
     padding: 20px 0 30px;
-
     border-top: 1px solid #31445f;
-
     color: #a9b8ca;
     font-size: 0.9rem;
 }
-
 
 @media only screen and (max-width: 600px) {
 
@@ -133,8 +145,12 @@ footer {
     article h2 {
         font-size: 1.6rem;
     }
-}
 
-article {
-    margin-bottom: 40px;
+    figure {
+        max-width: 100%;
+    }
+
+    figure img {
+        max-height: 350px;
+    }
 }
