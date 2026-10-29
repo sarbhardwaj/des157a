@@ -1,124 +1,135 @@
 
-(function(){
-    'use strict';
-    console.log('Reading JS');
+(function () {
+    "use strict";
 
-    const myForm = document.querySelector('#myform');
-    const madlib = document.querySelector('#madlib');
-    const formData = document.querySelectorAll("input[type=text]");
+    console.log("reading js");
 
-    myForm.addEventListener('submit', function(event){
-        event.preventDefault();
-        processFormData(formData);
-    });
+    const form = document.querySelector('#madlib-form');
+    const result = document.querySelector('#result');
+    const story = document.querySelector('#story');
+    const errorMessage = document.querySelector('#error-message');
 
-    function processFormData(formData){
-        const words = [];
-        const emptyfields = [];
-        let counter = 0;
+    const inputIds = [
+        'adj1', 'noun1', 'noun2', 'number', 'animal1',
+        'noun3', 'verb', 'noun4', 'plural1', 'plural2',
+        'food', 'object', 'adj2', 'animal2', 'noun5',
+        'phrase', 'noun6'
+    ];
 
-        for(const eachWord of formData){
-            if(eachWord.value){
-                words.push(eachWord.value);
+    function word(value) {
+        return { word: value };
+    }
+
+    function addParagraph(parts) {
+        const paragraph = document.createElement('p');
+
+        parts.forEach(function (part) {
+            if (typeof part === 'string') {
+                paragraph.appendChild(document.createTextNode(part));
             } else {
-                emptyfields.push(counter);
+                const strong = document.createElement('strong');
+                strong.textContent = part.word;
+                paragraph.appendChild(strong);
             }
-            counter++;
-        }
+        });
 
-        if(emptyfields.length > 0){
-            showErrors(formData, emptyfields);
-        } else {
-            makeMadlib(words);
-        }
+        story.appendChild(paragraph);
     }
 
-    function showErrors(formData, emptyfields){
-        const errorId = formData[emptyfields[0]].id;
-        const errorText = `Please fill out this field: ${errorId}`;
+    function getArticle(value) {
+        const firstLetter = value.charAt(0).toLowerCase();
 
-        madlib.innerHTML = errorText;
-
-        document.querySelector(`#${errorId}`).focus();
-    }
-
-    function makeMadlib(words){
-
-        const myText = `
-            <h3>A Day at UC Davis Gone Wrong</h3>
-
-            <p>
-                It was a ${words[0]} morning at UC Davis.
-                I woke up to discover that my alarm clock
-                had somehow been replaced by a
-                ${words[1]}.
-                Confused but already late, I grabbed my
-                ${words[2]} and rushed out the door.
-            </p>
-
-            <p>
-                By the time I arrived on campus,
-                I was already ${words[3]} minutes late
-                for class. I walked into the lecture hall,
-                only to discover that my professor had
-                been replaced by a giant ${words[4]}!
-                It stared directly at me and shouted,
-                "${words[5]}!"
-            </p>
-
-            <p>
-                Everyone in the classroom immediately
-                started ${words[6]}. I had absolutely
-                no idea what was happening, so I
-                decided to leave.
-            </p>
-
-            <p>
-                Unfortunately, things were even worse
-                outside. The entire UC Davis campus
-                was filled with ${words[7]}.
-                A group of ${words[8]} was running
-                across the Quad, throwing ${words[9]}
-                at random students.
-            </p>
-
-            <p>
-                I quickly grabbed a ${words[10]}
-                to defend myself, but before I could
-                escape, I heard a strange noise
-                coming from behind me.
-            </p>
-
-            <p>
-                I turned around and saw Chancellor May
-                riding a gigantic ${words[11]}
-                across campus while blasting
-                ${words[12]} through enormous speakers.
-            </p>
-
-            <p>
-                He stopped in front of everyone,
-                raised his arms, and yelled,
-                "${words[13]}!"
-            </p>
-
-            <p>
-                At that moment, I realized that
-                attending UC Davis was going to
-                be a lot more interesting than
-                I originally expected.
-            </p>
-
-            <p>
-                <strong>THE END.</strong>
-            </p>
-        `;
-
-        madlib.innerHTML = myText;
-
-        for(const eachField of formData){
-            eachField.value = '';
+        if ('aeiou'.includes(firstLetter)) {
+            return 'an';
         }
+
+        return 'a';
     }
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const values = {};
+
+        inputIds.forEach(function (id) {
+            values[id] = document.querySelector('#' + id).value.trim();
+        });
+
+        const emptyField = inputIds.find(function (id) {
+            return values[id] === '';
+        });
+
+        if (emptyField) {
+            errorMessage.textContent = 'Please fill out all the fields before creating your story!';
+            document.querySelector('#' + emptyField).focus();
+            return;
+        }
+
+        errorMessage.textContent = '';
+        story.replaceChildren();
+
+        const {
+            adj1, noun1, noun2, number, animal1, noun3,
+            verb, noun4, plural1, plural2, food, object,
+            adj2, animal2, noun5, phrase, noun6
+        } = values;
+
+        const heading = document.createElement('h3');
+        heading.textContent = 'A Day at UC Davis Gone Wrong';
+        story.appendChild(heading);
+
+        addParagraph([
+            'It was a ', word(adj1),
+            ' day at UC Davis. My alarm clock was replaced by ',
+            getArticle(noun1) + ' ', word(noun1),
+            '. I scrambled to get my backpack and hopped on my ',
+            word(noun2), ' to class.'
+        ]);
+
+        addParagraph([
+            'I showed up ', word(number),
+            ' minutes late to class. I walked into the classroom and found that my professor was replaced by ',
+            getArticle(animal1) + ' ', word(animal1),
+            '. No one seemed to care so I took a seat and continued acting as if nothing had happened.'
+        ]);
+
+        addParagraph([
+            'My professor then leaped onto the desk and exclaimed, “',
+            word(noun3),
+            '!” All the students in the classroom began ',
+            word(verb),
+            '. I decided to exit the classroom.'
+        ]);
+
+        addParagraph([
+            'I ran out into the ', word(noun4),
+            ' but the whole campus was filled with ',
+            word(plural1),
+            '. A ', word(plural2),
+            ' tossed me a ', word(food),
+            '. I grabbed ', getArticle(object) + ' ',
+            word(object), ' to protect myself.'
+        ]);
+
+        addParagraph([
+            'Things couldn’t get any more ', word(adj2),
+            ' until Chancellor May rode out on a huge ',
+            word(animal2),
+            ' blasting ', word(noun5), '.'
+        ]);
+
+        addParagraph([
+            'Chancellor May then turned towards me and yelled, “',
+            word(phrase), '!”'
+        ]);
+
+        addParagraph([
+            'I then turned around and headed back to my dorm. I ordered ',
+            word(noun6),
+            '. I had had my fill of UC Davis for one day.'
+        ]);
+
+        result.classList.remove('hidden');
+    });
 
 })();

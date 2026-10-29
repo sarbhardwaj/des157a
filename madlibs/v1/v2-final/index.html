@@ -23,9 +23,11 @@
 
     <div id="container">
 
-        <nav>
-            <a href="../../../index.html" class="portal-button">← GO BACK TO PORTAL</a>
-        </nav>
+        <header>
+            <nav>
+                <a href="../../../index.html" class="portal-button">← GO BACK TO PORTAL</a>
+            </nav>
+        </header>
 
         <main>
 
@@ -47,87 +49,87 @@
 
                         <div class="field">
                             <label for="adj1">01 / ADJECTIVE</label>
-                            <input type="text" id="adj1" name="adj1" placeholder="e.g. chaotic" required>
+                            <input type="text" id="adj1" placeholder="e.g. chaotic" required>
                         </div>
 
                         <div class="field">
                             <label for="noun1">02 / NOUN</label>
-                            <input type="text" id="noun1" name="noun1" placeholder="e.g. toaster" required>
+                            <input type="text" id="noun1" placeholder="e.g. toaster" required>
                         </div>
 
                         <div class="field">
                             <label for="noun2">03 / NOUN</label>
-                            <input type="text" id="noun2" name="noun2" placeholder="e.g. skateboard" required>
+                            <input type="text" id="noun2" placeholder="e.g. skateboard" required>
                         </div>
 
                         <div class="field">
                             <label for="number">04 / NUMBER</label>
-                            <input type="number" id="number" name="number" placeholder="e.g. 42" required>
+                            <input type="number" id="number" placeholder="e.g. 42" required>
                         </div>
 
                         <div class="field">
                             <label for="animal1">05 / ANIMAL</label>
-                            <input type="text" id="animal1" name="animal1" placeholder="e.g. penguin" required>
+                            <input type="text" id="animal1" placeholder="e.g. penguin" required>
                         </div>
 
                         <div class="field">
                             <label for="noun3">06 / NOUN</label>
-                            <input type="text" id="noun3" name="noun3" placeholder="e.g. banana" required>
+                            <input type="text" id="noun3" placeholder="e.g. banana" required>
                         </div>
 
                         <div class="field">
                             <label for="verb">07 / VERB ENDING IN -ING</label>
-                            <input type="text" id="verb" name="verb" placeholder="e.g. dancing" required>
+                            <input type="text" id="verb" placeholder="e.g. dancing" required>
                         </div>
 
                         <div class="field">
                             <label for="noun4">08 / NOUN</label>
-                            <input type="text" id="noun4" name="noun4" placeholder="e.g. fountain" required>
+                            <input type="text" id="noun4" placeholder="e.g. fountain" required>
                         </div>
 
                         <div class="field">
                             <label for="plural1">09 / PLURAL NOUN</label>
-                            <input type="text" id="plural1" name="plural1" placeholder="e.g. dinosaurs" required>
+                            <input type="text" id="plural1" placeholder="e.g. dinosaurs" required>
                         </div>
 
                         <div class="field">
                             <label for="plural2">10 / SINGULAR NOUN</label>
-                            <input type="text" id="plural2" name="plural2" placeholder="e.g. robot" required>
+                            <input type="text" id="plural2" placeholder="e.g. robot" required>
                         </div>
 
                         <div class="field">
                             <label for="food">11 / FOOD</label>
-                            <input type="text" id="food" name="food" placeholder="e.g. pizza" required>
+                            <input type="text" id="food" placeholder="e.g. pizza" required>
                         </div>
 
                         <div class="field">
                             <label for="object">12 / OBJECT</label>
-                            <input type="text" id="object" name="object" placeholder="e.g. umbrella" required>
+                            <input type="text" id="object" placeholder="e.g. umbrella" required>
                         </div>
 
                         <div class="field">
                             <label for="adj2">13 / ADJECTIVE</label>
-                            <input type="text" id="adj2" name="adj2" placeholder="e.g. ridiculous" required>
+                            <input type="text" id="adj2" placeholder="e.g. ridiculous" required>
                         </div>
 
                         <div class="field">
                             <label for="animal2">14 / ANIMAL</label>
-                            <input type="text" id="animal2" name="animal2" placeholder="e.g. giraffe" required>
+                            <input type="text" id="animal2" placeholder="e.g. giraffe" required>
                         </div>
 
                         <div class="field">
                             <label for="noun5">15 / NOUN</label>
-                            <input type="text" id="noun5" name="noun5" placeholder="e.g. jazz" required>
+                            <input type="text" id="noun5" placeholder="e.g. jazz" required>
                         </div>
 
                         <div class="field">
                             <label for="phrase">16 / PHRASE</label>
-                            <input type="text" id="phrase" name="phrase" placeholder="e.g. Run for your life!" required>
+                            <input type="text" id="phrase" placeholder="e.g. Run for your life!" required>
                         </div>
 
                         <div class="field">
                             <label for="noun6">17 / FOOD</label>
-                            <input type="text" id="noun6" name="noun6" placeholder="e.g. ramen" required>
+                            <input type="text" id="noun6" placeholder="e.g. ramen" required>
                         </div>
 
                     </div>
@@ -139,20 +141,16 @@
 
                 </form>
 
-            </section>
+                <section id="result" class="hidden">
 
-            <section id="result" class="hidden">
+                    <div class="result-heading">
+                        <h2>WHAT A DAY.</h2>
+                        <p>Here's how your adventure at UC Davis turned out.</p>
+                    </div>
 
-                <div class="result-heading">
-                    <h2>WHAT A DAY.</h2>
-                    <p>Here's how your adventure at UC Davis turned out.</p>
-                </div>
+                    <article id="story" aria-live="polite"></article>
 
-                <article id="story" aria-live="polite"></article>
-
-                <div class="result-bottom">
-                    <button type="button" id="play-again" class="main-button">PLAY AGAIN ↻</button>
-                </div>
+                </section>
 
             </section>
 
