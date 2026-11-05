@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London - A Change in Perspective</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <p>DES 157A / EVERY PICTURE</p>
+        <h1>A Change in Perspective</h1>
+        <p>Exploring London through different viewpoints.</p>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>One Landmark. Three Perspectives.</h2>
+            <p>Every place can look different depending on where you stand. Through three photographs of Tower Bridge, I wanted to explore how changing our perspective can transform the way we experience the same location.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Tower Bridge, London</h2>
+
+            <input type="radio" name="perspective" id="view1" checked>
+            <input type="radio" name="perspective" id="view2">
+            <input type="radio" name="perspective" id="view3">
+
+            <div id="photo-container">
+                <img src="images/IMG_5601.jpg" width="900" height="1200" alt="First perspective of Tower Bridge in London" class="photo1">
+
+                <img src="images/IMG_5603.jpg" width="900" height="1200" alt="Second perspective of Tower Bridge from another angle" class="photo2">
+
+                <img src="images/IMG_5604.jpg" width="899" height="1200" alt="Third perspective looking up toward Tower Bridge" class="photo3">
+
+                <p class="number number1">01 / 03</p>
+                <p class="number number2">02 / 03</p>
+                <p class="number number3">03 / 03</p>
+            </div>
+
+            <article id="photo-info">
+                <div class="caption caption1">
+                    <h3>Perspective 01</h3>
+                    <p>A different perspective changes what we see.</p>
+                </div>
+
+                <div class="caption caption2">
+                    <h3>Perspective 02</h3>
+                    <p>The same bridge can look different from another angle.</p>
+                </div>
+
+                <div class="caption caption3">
+                    <h3>Perspective 03</h3>
+                    <p>Looking up reveals details we might normally miss.</p>
+                </div>
+            </article>
+
+            <nav id="navigation" aria-label="Perspective navigation">
+                <p class="instruction">USE THE ARROWS TO CHANGE PERSPECTIVE</p>
+
+                <div id="arrows">
+                    <label for="view3" class="previous previous1" aria-label="Previous perspective">&#8592;</label>
+                    <label for="view1" class="previous previous2" aria-label="Previous perspective">&#8592;</label>
+                    <label for="view2" class="previous previous3" aria-label="Previous perspective">&#8592;</label>
+
+                    <label for="view2" class="next next1" aria-label="Next perspective">&#8594;</label>
+                    <label for="view3" class="next next2" aria-label="Next perspective">&#8594;</label>
+                    <label for="view1" class="next next3" aria-label="Next perspective">&#8594;</label>
+                </div>
+
+                <div id="view-labels">
+                    <label for="view1">01 / LEFT</label>
+                    <label for="view2">02 / CENTER</label>
+                    <label for="view3">03 / RIGHT</label>
+                </div>
+            </nav>
+        </section>
+    </main>
+
+    <footer>
+        <p>DES 157A — EVERY PICTURE</p>
+        <a href="https://sarbhardwaj.github.io/des157a/Portal/index.html">BACK TO PORTAL</a>
+    </footer>
+
+</body>
+</html>
