@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedaling Through London</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <p class="subtitle">LONDON ON TWO WHEELS</p>
+        <h1>Cycling through <em>London.</em></h1>
+        <p>Click a checkpoint to move the bicycle and explore my photographs.</p>
+    </header>
+
+    <main>
+
+        <section id="map">
+            <img src="images/london-map.png" alt="Map of London">
+
+            <button class="checkpoint" data-place="bridge" style="left:79%; top:60%;">
+                <span class="dot"></span>
+                TOWER BRIDGE
+            </button>
+
+            <button class="checkpoint" data-place="eye" style="left:41%; top:56%;">
+                <span class="dot"></span>
+                LONDON EYE
+            </button>
+
+            <button class="checkpoint" data-place="westminster" style="left:34%; top:57%;">
+                <span class="dot"></span>
+                WESTMINSTER BRIDGE
+            </button>
+
+            <button class="checkpoint" data-place="bigben" style="left:28%; top:43%;">
+                <span class="dot"></span>
+                BIG BEN
+            </button>
+
+            <button class="checkpoint" data-place="parliament" style="left:20%; top:55%;">
+                <span class="dot"></span>
+                PARLIAMENT
+            </button>
+
+            <button class="checkpoint" data-place="streets" style="left:54%; top:29%;">
+                <span class="dot"></span>
+                CITY STREETS
+            </button>
+
+            <div id="bike">🚲</div>
+        </section>
+
+        <section id="gallery">
+            <p id="location-tag">EAST LONDON</p>
+            <h2 id="location-title">Tower Bridge</h2>
+            <p id="description">Exploring Tower Bridge beside the Thames.</p>
+
+            <img id="photo" src="images/IMG_5601(1).jpeg" alt="Tower Bridge">
+
+            <div id="controls">
+                <button id="previous" aria-label="Previous photograph">←</button>
+                <span id="counter">1 / 3</span>
+                <button id="next" aria-label="Next photograph">→</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>EVERY PICTURE PROJECT · 2026</p>
+    </footer>
+
+</body>
+
+</html>
